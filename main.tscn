@@ -77,9 +77,8 @@ position = Vector2(1009, -2080)
 rotation = 1.16423
 script = ExtResource("6_jvo0l")
 
-[node name="rat" parent="Wall/Path2D/PathFollow2D" instance=ExtResource("6_itu1r")]
-position = Vector2(-0.395485, 0.918476)
-rotation = 2.01414
+[node name="Area2D" parent="Wall/Path2D/PathFollow2D" instance=ExtResource("6_itu1r")]
+rotation = 1.91972
 
 [node name="Ball" parent="." instance=ExtResource("1_cu2rl")]
 position = Vector2(-600, 1200)
