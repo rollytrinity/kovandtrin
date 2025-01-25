@@ -101,6 +101,6 @@ scale = Vector2(3.88461, 4.17308)
 sprite_frames = SubResource("SpriteFrames_d0wm7")
 autoplay = "default"
 
-[connection signal="body_entered" from="Wall/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Wall/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Wall/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Wall/Area2D" to="Ball" method="_on_ball_entered"]

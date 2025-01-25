@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdkpe0elp61nj"]
+
+[ext_resource type="Texture2D" uid="uid://enbtno3rd46x" path="res://assets/rat.png" id="1_rcauv"]
+[ext_resource type="Script" path="res://rat.gd" id="1_y8usi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5fpo"]
+atlas = ExtResource("1_rcauv")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5xph"]
+atlas = ExtResource("1_rcauv")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hagj8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5fpo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5xph")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_484nd"]
+size = Vector2(80, 88)
+
+[node name="rat" type="RigidBody2D"]
+collision_mask = 0
+script = ExtResource("1_y8usi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hagj8")
+animation = &"jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_484nd")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
