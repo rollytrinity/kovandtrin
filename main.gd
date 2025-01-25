@@ -10,3 +10,8 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	$Wall.rotation += rotation_direction * rotation_speed * delta
+
+func _on_body_entered(body: RigidBody2D):
+	$Wall/wallcoll.disabled = true
+	print("disabled?")
+	get_node("CollisionPolygon2D").disabled = false

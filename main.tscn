@@ -51,4 +51,6 @@ script = ExtResource("4_rtxyn")
 polygon = PackedVector2Array(320, -232, 320, -1064, 504, -1064, 512, -232, 592, -232, 848, -232, 848, -592, 600, -592, 600, -1160, 216, -1152, 136, -1152, 120, -8, 168, -16, 176, -232, 240, -232)
 disabled = true
 
+[connection signal="body_entered" from="Wall/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Wall/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Wall/Area2D" to="Ball" method="_on_ball_entered"]
