@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://tunnel.gd" id="4_rtxyn"]
 [ext_resource type="PackedScene" uid="uid://c0mvp21f4gq80" path="res://collectable.tscn" id="6_b8qh6"]
 [ext_resource type="PackedScene" uid="uid://cdkpe0elp61nj" path="res://rat.tscn" id="6_itu1r"]
-[ext_resource type="Script" path="res://leap.gd" id="6_jvo0l"]
 [ext_resource type="AudioStream" uid="uid://dkovdtslqvolx" path="res://assets/gamejam.wav" id="9_k3ajw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn3b6"]
@@ -18,6 +17,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1009, -2080, 0, 0, 0, 0, 1040, -2008, 0, 0, 0, 0, 1088, -1944, 0, 0, 0, 0, 1128, -1912, 0, 0, 0, 0, 1168, -1880, 0, 0, 0, 0, 1272, -1824, 0, 0, 0, 0, 1496, -1816, 0, 0, 0, 0, 1664, -1848, 0, 0, 0, 0, 1760, -1936, 0, 0, 0, 0, 1832, -2048, 0, 0, 0, 0, 1872, -2112)
 }
 point_count = 11
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyc6e"]
+size = Vector2(107.968, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4oxur"]
 size = Vector2(368, 96)
@@ -80,16 +82,26 @@ curve = SubResource("Curve2D_vdfwx")
 [node name="PathFollow2D" type="PathFollow2D" parent="Wall/Path2D"]
 position = Vector2(1009, -2080)
 rotation = 1.16423
-script = ExtResource("6_jvo0l")
 
-[node name="Area2D" parent="Wall/Path2D/PathFollow2D" instance=ExtResource("6_itu1r")]
-rotation = 1.91972
+[node name="rat" parent="Wall/Path2D/PathFollow2D" instance=ExtResource("6_itu1r")]
+rotation = 1.97679
+
+[node name="rat_detect" type="Area2D" parent="Wall/Path2D/PathFollow2D/rat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Path2D/PathFollow2D/rat/rat_detect"]
+position = Vector2(-288.007, -15.1777)
+shape = SubResource("RectangleShape2D_dyc6e")
 
 [node name="Ball" parent="." instance=ExtResource("1_cu2rl")]
 position = Vector2(-600, 1200)
 
 [node name="Camera2D" type="Camera2D" parent="Ball"]
 zoom = Vector2(1.5, 1.5)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Ball"]
+position = Vector2(600, -1200)
+stream = ExtResource("9_k3ajw")
+autoplay = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-600, 1352)
@@ -98,9 +110,6 @@ position = Vector2(-600, 1352)
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_4oxur")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("9_k3ajw")
-autoplay = true
-
 [connection signal="body_entered" from="Wall/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Wall/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Wall/Path2D/PathFollow2D/rat/rat_detect" to="." method="_on_rat_detect_body_entered"]
