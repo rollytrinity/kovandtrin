@@ -19,7 +19,12 @@ func _on_body_entered(body: RigidBody2D):
 	$Wall/tunnelwall/CollisionPolygon2D.disabled = false
 	$Wall/tunnelwall/CollisionPolygon2D.set_deferred("disabled", false)
 	
-	#$Wall/Ball.top_level = true
+	var tunnel1 = $Wall/tunnelTexture1
+	var tunnel2 = $Wall/tunnelTexture2
+	tunnel1.reparent($Wall/upperground)
+	tunnel2.reparent($Wall/upperground)
+	
+	
 
 func _on_rat_detect_body_entered(body: RigidBody2D):
 	$Wall/Path2D/PathFollow2D.progress_ratio += 0.005
