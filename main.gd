@@ -18,6 +18,7 @@ func _on_body_entered(body: RigidBody2D):
 	print("disabled?")
 	$Wall/tunnelwall/CollisionPolygon2D.disabled = false
 	$Wall/tunnelwall/CollisionPolygon2D.set_deferred("disabled", false)
+	
 
 
 func _on_rat_detect_body_entered(body: RigidBody2D):
