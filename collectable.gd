@@ -7,9 +7,8 @@ func _ready():
 
 
 func on_body_entered(body: RigidBody2D):
-	
-	if not body.is_in_group("player"):
-		print("pass")
-		pass
-		
+	$collectable/Sprite2D.disabled = false
+	$collectable/Sprite2D.set_deferred("disabled", false)
+	$collectable/CollisionShape2D.disabled = true
+	$collectable/CollisionShape2D.set_deferred("disabled", true)
 	print("Collect")
