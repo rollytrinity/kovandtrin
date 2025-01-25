@@ -197,7 +197,6 @@ tile_map_data = PackedByteArray("AAD0//P/AQAGAAYAAADu//P/AQAGAAYAAADp//P/AQAGAAY
 tile_set = ExtResource("2_i88oq")
 
 [node name="tunnelTexture2" type="TextureRect" parent="Wall"]
-visible = false
 offset_left = -942.0
 offset_top = 71.0
 offset_right = -707.0
@@ -206,7 +205,6 @@ texture = ExtResource("3_xycke")
 stretch_mode = 1
 
 [node name="tunnelTexture1" type="TextureRect" parent="Wall"]
-visible = false
 offset_left = -1635.0
 offset_top = 735.0
 offset_right = -1038.0
@@ -220,12 +218,10 @@ tile_map_data = PackedByteArray("AAAiAO3/AQAGAAYAAGAiAOz/AQAGAAYAAGAiAOv/AQAGAAY
 tile_set = ExtResource("2_i88oq")
 
 [node name="wallcoll" type="CollisionPolygon2D" parent="Wall"]
-visible = false
 position = Vector2(-501.5, 1558.6)
 polygon = PackedVector2Array(-856.2, -1384.8, -853.2, -253.8, 15.8, -245.8, 15.8, -540.8, 85.8, -530.8, 108.8, -152.8, -861.2, -155.8, -949.2, -255.8, -957.2, -1483.8, 443.8, -1498.8, 418.8, -480.8, -675.2, -487.8, -671.2, -1163.8, 96.8, -1163.8, 96.8, -795.8, -159.2, -795.8, -535.2, -795.8, -583.2, -795.8, -581.2, -578.8, 332.8, -565.8, 317.8, -1387.8)
 
 [node name="Area2D" type="Area2D" parent="Wall"]
-visible = false
 position = Vector2(-292.7, 746.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Area2D"]
@@ -233,7 +229,6 @@ position = Vector2(-248, 136)
 shape = SubResource("RectangleShape2D_mn3b6")
 
 [node name="tunnelwall" type="StaticBody2D" parent="Wall"]
-visible = false
 position = Vector2(-1252.7, 994.8)
 script = ExtResource("4_rtxyn")
 
@@ -242,11 +237,9 @@ polygon = PackedVector2Array(320, -232, 336, -1024, 376, -1104, 464, -1224, 552,
 disabled = true
 
 [node name="collectable" parent="Wall" instance=ExtResource("6_b8qh6")]
-visible = false
 position = Vector2(1296, -960)
 
 [node name="Path2D" type="Path2D" parent="Wall"]
-visible = false
 position = Vector2(-2063, 0)
 curve = SubResource("Curve2D_vdfwx")
 
@@ -264,11 +257,9 @@ position = Vector2(-549.993, -16.27)
 shape = SubResource("RectangleShape2D_dyc6e")
 
 [node name="lock" parent="Wall" instance=ExtResource("10_32dtn")]
-visible = false
 position = Vector2(-2032, 880)
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 position = Vector2(-600, 1352)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
