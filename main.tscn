@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://1ddmtmm37y7j"]
+[gd_scene load_steps=17 format=4 uid="uid://1ddmtmm37y7j"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_byv6r"]
 [ext_resource type="PackedScene" uid="uid://bfs3sa5dfbf1c" path="res://scenes/ball.tscn" id="1_cu2rl"]
@@ -7,10 +7,17 @@
 [ext_resource type="Script" path="res://tunnel.gd" id="4_rtxyn"]
 [ext_resource type="Script" path="res://scenes/ball.gd" id="4_y0njd"]
 [ext_resource type="PackedScene" uid="uid://c0mvp21f4gq80" path="res://collectable.tscn" id="6_b8qh6"]
+[ext_resource type="PackedScene" uid="uid://cdkpe0elp61nj" path="res://rat.tscn" id="6_itu1r"]
 [ext_resource type="Texture2D" uid="uid://e21kool7m18" path="res://assets/idle.png" id="7_ied6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn3b6"]
 size = Vector2(28, 225)
+
+[sub_resource type="Curve2D" id="Curve2D_vdfwx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1009, -2080, 0, 0, 0, 0, 1040, -2008, 0, 0, 0, 0, 1088, -1944, 0, 0, 0, 0, 1128, -1912, 0, 0, 0, 0, 1168, -1880, 0, 0, 0, 0, 1272, -1824, 0, 0, 0, 0, 1496, -1816, 0, 0, 0, 0, 1664, -1848, 0, 0, 0, 0, 1760, -1936, 0, 0, 0, 0, 1832, -2048, 0, 0, 0, 0, 1872, -2112)
+}
+point_count = 11
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0wxy"]
 atlas = ExtResource("7_ied6t")
@@ -94,6 +101,18 @@ disabled = true
 
 [node name="collectable" parent="Wall" instance=ExtResource("6_b8qh6")]
 position = Vector2(-1524.7, 898.8)
+
+[node name="Path2D" type="Path2D" parent="Wall"]
+position = Vector2(-2063, 0)
+curve = SubResource("Curve2D_vdfwx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Wall/Path2D"]
+position = Vector2(1009, -2080)
+rotation = 1.16423
+
+[node name="rat" parent="Wall/Path2D/PathFollow2D" instance=ExtResource("6_itu1r")]
+position = Vector2(2.7682, -6.42939)
+rotation = 2.01414
 
 [node name="Ball" parent="." instance=ExtResource("1_cu2rl")]
 position = Vector2(-72, 1392)

@@ -53,7 +53,8 @@ shape = SubResource("RectangleShape2D_484nd")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-64, -40)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-352, 12)
+position = Vector2(-336, 16)
 shape = SubResource("RectangleShape2D_nxl4u")
