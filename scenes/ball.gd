@@ -15,3 +15,6 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D):
 	print("colliding?")
 	$AnimatedSprite2D.play("bounce")
+
+
+#physics get velocity of ball and flip to negative
