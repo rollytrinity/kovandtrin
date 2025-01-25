@@ -113,7 +113,7 @@ position = Vector2(596, 288)
 [node name="Label4" type="Label" parent="CanvasGroup"]
 anchors_preset = -1
 anchor_left = -0.159722
-anchor_top = 0.123457
+anchor_top = 0.0493827
 anchor_right = 0.333333
 anchor_bottom = 0.0493827
 offset_left = 832.0
