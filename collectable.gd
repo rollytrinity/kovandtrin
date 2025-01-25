@@ -1,5 +1,6 @@
 extends Area2D
 
+var key: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,3 +10,5 @@ func _ready():
 func on_body_entered(body: RigidBody2D):
 	queue_free()
 	print("Collect")
+	key += 1
+	print(key)

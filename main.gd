@@ -18,8 +18,6 @@ func _on_body_entered(body: RigidBody2D):
 	print("disabled?")
 	$Wall/tunnelwall/CollisionPolygon2D.disabled = false
 	$Wall/tunnelwall/CollisionPolygon2D.set_deferred("disabled", false)
-	
-	#$Wall/Ball.top_level = true
 
 func _on_rat_detect_body_entered(body: RigidBody2D):
-	$Wall/Path2D/PathFollow2D.progress_ratio += 0.005
+	$Wall/Path2D/PathFollow2D.progress_ratio = 0.05
