@@ -13,5 +13,7 @@ func _physics_process(delta):
 
 func _on_body_entered(body: RigidBody2D):
 	$Wall/wallcoll.disabled = true
+	$Wall/wallcoll.set_deferred("disabled", true)
 	print("disabled?")
-	get_node("CollisionPolygon2D").disabled = false
+	$Wall/tunnelwall/CollisionPolygon2D.disabled = false
+	$Wall/tunnelwall/CollisionPolygon2D.set_deferred("disabled", false)
