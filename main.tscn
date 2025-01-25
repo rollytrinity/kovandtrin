@@ -111,7 +111,7 @@ position = Vector2(1009, -2080)
 rotation = 1.16423
 
 [node name="rat" parent="Wall/Path2D/PathFollow2D" instance=ExtResource("6_itu1r")]
-position = Vector2(2.7682, -6.42939)
+position = Vector2(-0.395485, 0.918476)
 rotation = 2.01414
 
 [node name="Ball" parent="." instance=ExtResource("1_cu2rl")]
@@ -129,6 +129,6 @@ scale = Vector2(4.3, 4.3)
 sprite_frames = SubResource("SpriteFrames_d0wm7")
 autoplay = "default"
 
-[connection signal="body_entered" from="Wall/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Wall/Area2D" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Wall/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Wall/Area2D" to="Ball" method="_on_ball_entered"]
