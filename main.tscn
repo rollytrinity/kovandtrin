@@ -96,8 +96,7 @@ script = ExtResource("4_y0njd")
 zoom = Vector2(1.5, 1.5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Ball"]
-position = Vector2(-1.74046e-05, 3)
-scale = Vector2(3.88461, 4.17308)
+scale = Vector2(4.3, 4.3)
 sprite_frames = SubResource("SpriteFrames_d0wm7")
 autoplay = "default"
 
