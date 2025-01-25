@@ -91,11 +91,6 @@ script = ExtResource("1_r8c2h")
 shape = SubResource("CircleShape2D_4f5l7")
 disabled = true
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_4f5l7")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.5)
 scale = Vector2(4.3, 4.5)
