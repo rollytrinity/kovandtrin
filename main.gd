@@ -1,6 +1,7 @@
 extends Node
 
 @export var rotation_speed = 1.5
+var velocity 
 
 var rotation_direction = 0
 
