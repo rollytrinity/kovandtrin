@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://tunnel.gd" id="4_rtxyn"]
 [ext_resource type="PackedScene" uid="uid://c0mvp21f4gq80" path="res://collectable.tscn" id="6_b8qh6"]
 [ext_resource type="PackedScene" uid="uid://cdkpe0elp61nj" path="res://rat.tscn" id="6_itu1r"]
-[ext_resource type="AudioStream" uid="uid://daaxh20qbvwew" path="res://assets/gamejam.mp3" id="8_w1u1s"]
+[ext_resource type="AudioStream" uid="uid://c3ct7aimlr8ec" path="res://assets/gamejam.mp3" id="8_w1u1s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn3b6"]
 size = Vector2(28, 225)

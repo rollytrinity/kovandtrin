@@ -2,11 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-<<<<<<< HEAD
-uid="uid://daaxh20qbvwew"
-=======
-uid="uid://dpdjna7jillf1"
->>>>>>> 9a70d6bfbc7bf693fdf77488c90ff5c717d349e8
+uid="uid://c3ct7aimlr8ec"
 path="res://.godot/imported/gamejam.mp3-070259eb5f340489ae6e23303592a273.mp3str"
 
 [deps]
@@ -16,11 +12,7 @@ dest_files=["res://.godot/imported/gamejam.mp3-070259eb5f340489ae6e23303592a273.
 
 [params]
 
-<<<<<<< HEAD
 loop=true
-=======
-loop=false
->>>>>>> 9a70d6bfbc7bf693fdf77488c90ff5c717d349e8
 loop_offset=0
 bpm=0
 beat_count=0
