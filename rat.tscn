@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdkpe0elp61nj"]
+[gd_scene load_steps=7 format=3 uid="uid://cdkpe0elp61nj"]
 
 [ext_resource type="Script" path="res://rat.gd" id="1_osumi"]
 [ext_resource type="Texture2D" uid="uid://enbtno3rd46x" path="res://assets/rat.png" id="1_rcauv"]
@@ -33,29 +33,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqgod"]
-size = Vector2(248, 88)
-
-[node name="rat" type="CharacterBody2D"]
+[node name="rat" type="Area2D"]
 script = ExtResource("1_osumi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="ratcoll" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_484nd")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+[node name="VisibleOnScreenNotifier2D2" type="VisibleOnScreenNotifier2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dky1e")
 animation = &"jump"
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-164, -4)
-shape = SubResource("RectangleShape2D_nqgod")
-
 [node name="Timer" type="Timer" parent="."]
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
