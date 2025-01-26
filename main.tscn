@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://1ddmtmm37y7j"]
+[gd_scene load_steps=15 format=4 uid="uid://1ddmtmm37y7j"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_byv6r"]
 [ext_resource type="PackedScene" uid="uid://bfs3sa5dfbf1c" path="res://scenes/ball.tscn" id="1_cu2rl"]
@@ -8,7 +8,8 @@
 [ext_resource type="Script" path="res://tunnel.gd" id="4_rtxyn"]
 [ext_resource type="PackedScene" uid="uid://c0mvp21f4gq80" path="res://collectable.tscn" id="6_b8qh6"]
 [ext_resource type="AudioStream" uid="uid://c3ct7aimlr8ec" path="res://assets/gamejam.mp3" id="8_w1u1s"]
-[ext_resource type="PackedScene" uid="uid://cei0p56j2ygs5" path="res://lock.tscn" id="10_32dtn"]
+[ext_resource type="PackedScene" path="res://lock.tscn" id="10_32dtn"]
+[ext_resource type="PackedScene" path="res://addons/flowerwall_postprocess/scenes/flowerwall_crt_config_ui.tscn" id="10_dbr2v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn3b6"]
 size = Vector2(28, 225)
@@ -232,5 +233,33 @@ position = Vector2(1296, -960)
 [node name="lock" parent="Wall" instance=ExtResource("10_32dtn")]
 position = Vector2(-2032, 880)
 
+<<<<<<< HEAD
+=======
+[node name="HUD" type="CanvasLayer" parent="Wall"]
+
+[node name="Path2D" type="Path2D" parent="Wall/HUD"]
+position = Vector2(0, 16)
+curve = SubResource("Curve2D_riy2t")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Wall/HUD/Path2D"]
+position = Vector2(-1112, -2096)
+rotates = false
+
+[node name="rat" parent="Wall/HUD/Path2D/PathFollow2D" instance=ExtResource("6_itu1r")]
+rotation = -3.14159
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-600, 1352)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_4oxur")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="FlowerwallCrtConfigUi" parent="CanvasLayer" instance=ExtResource("10_dbr2v")]
+visible = false
+
+>>>>>>> 0d7872f88c3335392c6138379cd306feaaf7445f
 [connection signal="body_entered" from="Wall/Area2D" to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Wall/Area2D" to="." method="_on_area_2d_body_entered"]
