@@ -24,8 +24,10 @@ func _on_body_entered(body: RigidBody2D):
 	var tunnel2 = $Wall/tunnelTexture2
 	tunnel1.reparent($Wall/upperground)
 	tunnel2.reparent($Wall/upperground)
-	
-	
+	#bug where if you re-enter the collision box, it crashes upon attempting to reparent whats been reparented.
+	#quick fix: turn off collision. can fix this after jam, for now, not nessecary unless we have time.
+	$Wall/Area2D/CollisionShape2D.disabled = true
+	$Wall/Area2D/CollisionShape2D.set_deferred("disabled", true)
 
 
 func _on_rat_detect_body_entered(body: RigidBody2D):
