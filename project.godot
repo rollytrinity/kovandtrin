@@ -15,6 +15,14 @@ run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+flowerwall_pp_autoload="*res://addons/flowerwall_postprocess/scenes/flowerwall_pp.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Flowerwall-CRT-shader-for-Godot-main/addons/flowerwall_postprocess/plugin.cfg", "res://addons/flowerwall_postprocess/plugin.cfg")
+
 [input]
 
 tilt_left={
